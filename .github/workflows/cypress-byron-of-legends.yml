@@ -5,12 +5,12 @@ on:
     branches:
       - main
     paths:
-      - 'BYRONOFLEGENDS/**.js'
-      - 'BYRONOFLEGENDS/**.json'
-      - 'BYRONOFLEGENDS/**.yml'
+      - 'byronoflegends/**.js'
+      - 'byronoflegends/**.json'
+      - 'byronoflegends/**.yml'
 
 jobs:
-  BYRONOFLEGENDS-tests:
+  byronoflegends-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,8 +24,8 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./BYRONOFLEGENDS
+        working-directory: ./byronoflegends
 
       - name: Run Cypress tests
         run: npm run cypress:run
-        working-directory: ./BYRONOFLEGENDS
+        working-directory: ./byronoflegends
