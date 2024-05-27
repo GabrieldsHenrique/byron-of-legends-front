@@ -4,7 +4,7 @@
     <div class="w-full flex flex-col items-center  z-20 ">
       <span class="text-center text-white/80 text-6xl font-Braton">Cadastro</span>
       <span class="text-center  text-white/80 text-lg">Já possui uma conta?
-        <span routerLink="/login" class="text-primary-color-2 hover:text-primary-color transition-all cursor-pointer">Acesse aqui</span></span>
+        <span id="login" routerLink="/login" class="text-primary-color-2 hover:text-primary-color transition-all cursor-pointer">Acesse aqui</span></span>
       <form [formGroup]="form" class="w-full mt-4 gap-4">
         @for(linha of estrututaFormCadastro; track $index ){
         <div [class]="linha.className">
@@ -41,7 +41,7 @@
 
       <div class="flex flex-col gap-2 w-full mt-6 text-xl">
 
-        <button routerLink="/interno" [disabled]="form.invalid" role="button"
+        <button id="cadastrar" routerLink="/interno" [disabled]="form.invalid" role="button"
           class="primary-button w-full py-2 h-[3.3rem]"> Cadastrar </button>
       </div>
 
