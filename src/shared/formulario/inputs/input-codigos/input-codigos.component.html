@@ -1,0 +1,17 @@
+<form [formGroup]="formInputs" class="mt-5 relative">
+  @if(label){
+  <h1 class="font-bold text-xl text-gray-2 mb-3">Autenticação de dois fatores</h1>
+  }
+
+  <div class="flex gap-4">
+    @for(linha of getControlsArray(); track $index){
+
+    <span class="p-float-label w-10">
+      <input [id]="'campo'+$index" type="text" maxlength="1" pattern="[0-9]" pInputText [formControlName]="$index"
+        (input)="moverFoco($event.target, $index)" />
+    </span>
+
+    }
+
+  </div>
+</form>

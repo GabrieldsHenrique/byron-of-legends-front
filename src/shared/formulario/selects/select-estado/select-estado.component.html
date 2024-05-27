@@ -1,0 +1,35 @@
+<form class=" mt-5" [formGroup]="form">
+  <span class="p-float-label">
+    <p-dropdown
+      autoAjusteWidth
+      [disabled]="form.get(formControlName)!.disabled"
+      [inputId]="formControlName"
+      [options]="estadoList"
+      [formControlName]="formControlName"
+      [placeholder]="placeholder"
+      [ngClass]="{
+        'ng-invalid ng-dirty ':
+          form.get(formControlName)?.errors &&
+          (form.get(formControlName)?.touched ||
+            form.get(formControlName)?.dirty)
+      }"
+      optionLabel="label"
+      optionValue="value"
+    ></p-dropdown>
+
+    <label for="{{ formControlName }}" class="font-medium text-gray-3">{{
+      placeholder
+    }}</label>
+  </span>
+  @if ( form.get(formControlName)?.errors && (form.get(formControlName)?.touched
+  || form.get(formControlName)?.dirty)){
+  <small class="text-c-error font-bold absolute right-0">
+    {{ "Campo requerido" }}</small
+  >
+  }
+
+  @if(form.get(formControlName)?.errors && !form.get(formControlName)?.hasError('required')){
+    <small class="text-c-error font-bold absolute right-0 ">
+    {{'Campo inválido'}} </small>
+  }
+</form>

@@ -1,0 +1,36 @@
+<form [formGroup]="form" class="mt-5">
+  @if (label){
+    <span class="mb-2 not-italic overflow-hidden text-nowrap font-semibold text-lg flex items-center text-gray-2">{{label}}</span>
+    }
+
+  <div [ngClass]="mostrarToogle ? 'grid grid-cols-12 ' : 'flex'" class="items-center gap-3">
+    @if(mostrarToogle){
+    <p-inputSwitch class="col-span-2" [(ngModel)]="inicialToogle" (onChange)="alterarToogle($event.checked)"
+      [ngModelOptions]="{standalone: true}"></p-inputSwitch>
+    }
+    <span class="p-float-label col-span-10 w-full">
+      <p-dropdown [inputId]="formControlName" [options]="options" [formControlName]="formControlName" [ngClass]="{
+        'ng-invalid ng-dirty ':
+          form.get(formControlName)?.errors &&
+          (form.get(formControlName)?.touched ||
+            form.get(formControlName)?.dirty)
+      }" optionLabel="label" optionValue="value"></p-dropdown>
+
+      <label for="{{ formControlName }}" class="font-medium text-gray-3">{{
+        placeholder
+        }}</label>
+    </span>
+
+  </div>
+
+  @if ( form.get(formControlName)?.errors && (form.get(formControlName)?.touched
+  || form.get(formControlName)?.dirty)){
+  <small class="text-c-error font-bold absolute right-0">
+    {{ "Campo requerido" }}</small>
+  } @if(form.get(formControlName)?.errors &&
+  !form.get(formControlName)?.hasError('required')){
+  <small class="text-c-error font-bold absolute right-0">
+    {{ "Campo inválido" }}
+  </small>
+  }
+</form>

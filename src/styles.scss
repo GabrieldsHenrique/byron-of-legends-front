@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+@font-face {
+  font-family: league;
+  src: url("./assets/fonts/League.otf") format("truetype");
+}
+
+input:disabled{
+  opacity: 0.5;
+}
+
+button:disabled{
+  opacity: 0.4;
+}
+
+body {
+  font-family: 'league';
+}
+
+.p-inputtext {
+  @apply  p-4 text-xl h-[3.3rem] font-regular text-primary-color-2 border border-primary-color hover:border-primary-color  bg-[#ffffff30] rounded-lg w-full shadow-none;
+}
+
+.p-inputtext:enabled:focus {
+  @apply border border-primary-color-3;
+}
+
+.p-float-label input:focus ~ label,
+.p-float-label input.p-filled ~ label,
+.p-float-label textarea:focus ~ label,
+.p-float-label textarea.p-filled ~ label,
+.p-float-label .p-inputwrapper-focus ~ label,
+.p-float-label .p-inputwrapper-filled ~ label {
+  @apply  text-sm text-primary-color
+}
+
+.primary-button {
+  @apply bg-primary-color font-semibold text-white border border-primary-color-2 rounded-lg transition-all duration-300 flex justify-center items-center gap-1 shadow-lg hover:bg-primary-color-3;
+}
+
+.secondary-button {
+  @apply bg-[#ffffff30] text-white rounded-lg  border border-primary-color transition-all duration-300 flex justify-center items-center gap-1 font-semibold shadow-lg;
+}
+
+p-password {
+  div {
+    width: 100%;
+  }
+}
+
+.animacao {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.tab-selected{
+  @apply text-[#7A6A3B]
+}
+
+
+.card {
+  @apply border border-primary-color rounded-xl bg-primary-color-3/20 backdrop-blur-2xl shadow-2xl;
+}
+.card_secondary {
+  @apply bg-gradient-to-tr from-primary-color-3/20 to-primary-color-3/40 border border-primary-color/30 shadow-2xl;
+}
