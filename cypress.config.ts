@@ -6,7 +6,7 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: 'http://localhost:4200/',
+    baseUrl: 'https://byron-of-legends-front.vercel.app/',
     testIsolation: false
   },
 
