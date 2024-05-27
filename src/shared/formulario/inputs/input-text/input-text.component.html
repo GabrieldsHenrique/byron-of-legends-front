@@ -23,12 +23,12 @@
 
   @if( form.get(formControlName)?.hasError('required') && (form.get(formControlName)?.touched
   || form.get(formControlName)?.dirty) ){
-  <small class="text-c-error font-league text-xs absolute right-0 ">
+  <small id="{{formControlName+'obrigatorio'}}" class="text-c-error font-league text-xs absolute right-0 ">
     {{ "Campo requerido" }}</small>
   }
 
   @if(form.get(formControlName)?.errors && !form.get(formControlName)?.hasError('required')){
-  <small class="text-c-error font-league text-xs absolute  right-0">
+  <small id="{{formControlName+'invalido'}}" class="text-c-error font-league text-xs absolute  right-0">
     {{'Campo inválido'}} </small>
   }
 </form>

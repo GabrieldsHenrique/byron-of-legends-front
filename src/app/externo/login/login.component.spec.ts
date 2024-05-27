@@ -1,23 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+/// <reference types="cypress" />
 
-import { LoginComponent } from './login.component';
-
-describe('LoginComponent', () => {
-  let component: LoginComponent;
-  let fixture: ComponentFixture<LoginComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [LoginComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(LoginComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+context("Login Page", ()=> {
+  it("should sign in", () => {
+    cy.visit("http://localhost:4200/login")
+    cy.get('input[name="email"]').type('gabriel.henrique@gmail.com.br')
+    cy.get('input[name="password"]').type('1234@Mudar')
+  })
+})
