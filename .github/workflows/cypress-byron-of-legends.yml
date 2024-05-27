@@ -5,9 +5,9 @@ on:
     branches:
       - main
     paths:
-      - 'byronoflegends/**.js'
-      - 'byronoflegends/**.json'
-      - 'byronoflegends/**.yml'
+      - '**.js'
+      - '**.json'
+      - '**.yml'
 
 jobs:
   byronoflegends-tests:
