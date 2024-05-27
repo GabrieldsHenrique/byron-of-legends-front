@@ -1,0 +1,33 @@
+<!-- <form [formGroup]="form">
+  <span class="p-float-label mt-5">
+    <p-autoComplete
+      [disabled]="form.get(formControlName)!.disabled"
+      inputId="{{ formControlName }}"
+      [formControlName]="formControlName"
+      [suggestions]="bancosFiltrados"
+      placeholder="Ex: 000 - Nome do banco"
+      (completeMethod)="bancosFiltrados = utilService.filtrarLista(bancos, $event.query)"
+      [dropdown]="true"
+      [ngClass]="{
+        'ng-invalid ng-dirty ':
+          form.get(formControlName)?.errors &&
+          (form.get(formControlName)?.touched || form.get(formControlName)?.dirty)
+      }"
+    >
+    </p-autoComplete>
+
+    <label for="{{ formControlName }}" class="font-medium a">{{
+      placeholder
+    }}</label>
+  </span>
+
+  <small
+    class="text-c-error font-bold absolute right-0"
+    *ngIf="
+      form.get(formControlName)?.errors &&
+      (form.get(formControlName)?.touched || form.get(formControlName)?.dirty)
+    "
+  >
+    {{ "Campo requerido" }}</small
+  >
+</form> -->

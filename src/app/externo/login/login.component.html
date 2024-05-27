@@ -1,0 +1,39 @@
+
+<div class="w-full h-full flex animacao justify-center font-league  items-center p-10">
+
+  <div class="flex gap-4 card p-14 backdrop-blur-3xl w-[40rem]">
+    <div class="w-full flex flex-col items-center  z-20 ">
+      <span class="text-center text-white/80 text-6xl font-Braton">Seja bem vindo!</span>
+      <span class="text-center  text-white/80 text-lg">Faça login em sua conta</span>
+      <form [formGroup]="form" class="w-full mt-4 gap-4">
+        @for(linha of estrututaFormLogin; track $index ){
+        <div [class]="linha.className">
+          @for(campo of linha.linha; track $index ){
+          <div [class]="campo.className">
+            <app-campo [type]="campo.type" [formControlName]="campo.formControlName" [placeholder]="campo.placeholder"
+              [form]="form" [options]="campo.options" [mask]="campo.mask" [label]="campo.label"></app-campo>
+          </div>
+          }
+        </div>
+        }
+      </form>
+
+      <div class="flex w-full justify-end">
+        <span routerLink="/recuperar-senha" class="text-center text-sm text-white/80 hover:text-primary-color transition-all duration-200 cursor-pointer mt-4 underline">Esqueceu a senha?</span>
+      </div>
+
+      <div class="flex flex-col gap-2 w-full mt-3 text-xl">
+
+        <button routerLink="/interno" [disabled]="form.invalid" role="button" class="primary-button w-full py-2 h-[3.3rem]"> Login </button>
+        <button [routerLink]="'/cadastrar'" role="button" class="secondary-button w-full py-2 h-[3.3rem]"> Cadastrar </button>
+      </div>
+
+      <div class="relative w-full flex justify-center items-center  drop-shadow-2xl opacity-80 mt-10" >
+        <span class="z-10 text-white text-6xl">byron <br> legends</span>
+        <span class="absolute  ml-[10.7rem]  top-6 text-2xl text-white">Of</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
